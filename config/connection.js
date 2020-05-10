@@ -16,5 +16,5 @@ console.log("You are connected as" + connection.threadId)
   });
   
   
-  //export coonnection for ORM 
+  //export connection for ORM 
   module.exports= connection
