@@ -2,21 +2,22 @@
 <h1 class="text-center">Eat Your Burgers!</h1>
 
 <div class="row">
-  <div class="col-lg-4">
     <ol>
         <li>
-            <form action="/{{this.id}}?_method=PUT" method="POST">
-              <input type="hidden" name="burger" value="true">
-              <button type="submit" class="btn btn-success">Eat that Burger!</button>
-            </form>
+           {{#each burger}}
+            {{#unless devour}}
+             {{> burgers/burger-block devour=true}}
+               {{/unless}}
+                {{/each}}
           </li>
     </ol>
 </div>
-<div class="col-lg-4">
       <li>
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="burger" value="false">
-        </form>
+     {{#each burger}}
+       {{#if devour}}
+        {{> burgers/burger-block devour=false}}
+         {{/if}}
+          {{/each}}
       </li>
 </ol>
 </div>
